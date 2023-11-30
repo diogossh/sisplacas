@@ -31,8 +31,9 @@ public class Veiculo {
 
 
 
-  //@JoinColumn(name = "id_restricao")
-  @OneToOne
+
+  //@OneToOne(mappedBy = "veiculo")
+  @JoinColumn(name = "id_restricao")
     private Restricao restricao;
 
 

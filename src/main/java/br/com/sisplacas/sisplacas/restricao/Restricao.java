@@ -25,11 +25,14 @@ public class Restricao {
 
     private String nome;
 
+    //@JoinColumn(name = "id_restricao")
     @OneToOne
-    @JoinColumn(name = "id_restricao")
-    private Veiculo veiculo;
+    //@OneToOne
+        private Veiculo veiculo;
 
-
+    public Restricao(int id) {
+        this.id = id;
+    }
 }
 
 
