@@ -26,9 +26,7 @@ public class Restricao {
     @Column(name = "nome")
     private String nome;
 
-    //@JoinColumn(name = "id_restricao")
-    //@OneToOne
-      //    private Veiculo veiculo;
+
 
 
 }
