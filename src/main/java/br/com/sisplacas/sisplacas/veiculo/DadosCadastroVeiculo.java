@@ -1,10 +1,8 @@
 package br.com.sisplacas.sisplacas.veiculo;
 
 import br.com.sisplacas.sisplacas.restricao.Restricao;
-import jakarta.validation.Valid;
+import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 
 public record DadosCadastroVeiculo(
         @NotBlank
@@ -16,6 +14,7 @@ public record DadosCadastroVeiculo(
         @NotBlank
         String placa,
 
+        @OneToOne(mappedBy = "veiculo")
         Restricao restricao
 ) {
 }

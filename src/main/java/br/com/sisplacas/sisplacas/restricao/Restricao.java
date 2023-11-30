@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 
 //@Table(name = "restricao")
-@Entity
+@Entity(name = "Restricao")
 
 //@Embeddable
 @Getter
@@ -25,7 +25,11 @@ public class Restricao {
 
     private String nome;
 
-    @OneToOne(mappedBy = "veiculo")
+    @OneToOne
+    @JoinColumn(name = "id_restricao")
     private Veiculo veiculo;
 
+
 }
+
+

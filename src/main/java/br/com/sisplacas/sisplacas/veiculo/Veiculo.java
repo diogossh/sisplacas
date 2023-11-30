@@ -7,8 +7,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Table(name = "veiculo")
-@Entity(name = "Veiculo")
+//@Table(name = "veiculo")
+@Entity
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,9 +30,9 @@ public class Veiculo {
 
 
 
-  @OneToOne(mappedBy = "veiculo")
-  @JoinTable(name="veiculo_restricao",
-            joinColumns = @JoinColumn(name = "id_restricao"))
+
+  //@JoinColumn(name = "id_restricao")
+  @OneToOne
     private Restricao restricao;
 
 
@@ -41,6 +41,7 @@ public class Veiculo {
         this.cor = dados.cor();
         this.marca = dados.marca();
         this.placa = dados.placa();
+        //this.restricao = dados.restricao();
         this.restricao = dados.restricao();
 
     }
