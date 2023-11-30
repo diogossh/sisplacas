@@ -8,7 +8,7 @@ public enum Cores {
     PRETO,
     AMARELO,
     CINZA,
-    ROXO,
+    ROXO
 
 
 }
