@@ -1,7 +1,6 @@
 package br.com.sisplacas.sisplacas.veiculo;
 
 import br.com.sisplacas.sisplacas.restricao.Restricao;
-import br.com.sisplacas.sisplacas.veiculo.Cores;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -28,13 +27,12 @@ public class Veiculo {
     private String placa;
 
 
-    @ManyToOne
-    @JoinTable(
-            name = "veiculo_restricao",
-            joinColumns = @JoinColumn(name = "veiculo_id"),
-            inverseJoinColumns = @JoinColumn(name = "restricao_id")
-    )
 
+
+
+  @OneToOne(mappedBy = "veiculo")
+  @JoinTable(name="veiculo_restricao",
+            joinColumns = @JoinColumn(name = "id_restricao"))
     private Restricao restricao;
 
 

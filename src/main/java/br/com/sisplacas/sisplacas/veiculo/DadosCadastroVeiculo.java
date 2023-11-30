@@ -16,7 +16,8 @@ public record DadosCadastroVeiculo(
         @NotBlank
         String placa,
 
-        Restricao restricao) {
+        Restricao restricao
+) {
 }
 
 
