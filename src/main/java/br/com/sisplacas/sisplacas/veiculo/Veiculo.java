@@ -2,24 +2,24 @@ package br.com.sisplacas.sisplacas.veiculo;
 
 import br.com.sisplacas.sisplacas.restricao.Restricao;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 //@Table(name = "veiculo")
 @Entity
+@Data
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
+@Table(name = "veiculo")
 public class Veiculo {
 
 
 
-    @Id @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
-
     private String nome;
     @Enumerated(EnumType.STRING)
     private Cores cor;
@@ -32,8 +32,10 @@ public class Veiculo {
 
 
 
-  //@OneToOne(mappedBy = "veiculo")
-  @JoinColumn(name = "id_restricao")
+
+
+    @ManyToOne
+    @JoinColumn(name = "id_restricao", nullable = true) // nullable = true se o relacionamento for opcional
     private Restricao restricao;
 
 
